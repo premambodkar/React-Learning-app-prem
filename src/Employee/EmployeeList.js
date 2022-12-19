@@ -11,9 +11,15 @@ function EmployeeList() {
     { id: 6, name: 'f', salary: 7 },
   ];
   const columns = ['id', 'name', 'salary'];
+  const onEdit = () => {
+    alert('Test');
+  };
   return (
-    <div>
-      <CustomTable columns={columns} dataRows={dataRows} />
+    <div className="container">
+      <div className="d-flex flex-row-reverse">
+        <button className="btn btn-primary">New Employee</button>
+      </div>
+      <CustomTable columns={columns} dataRows={dataRows} onEdit="onClick" />
     </div>
   );
 }
