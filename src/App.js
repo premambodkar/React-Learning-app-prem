@@ -1,12 +1,19 @@
 import React from 'react';
 import './style.css';
-import EmployeeList from './EmployeeList.js';
+import EmployeeList from './Employee/EmployeeList.js';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <EmployeeList />,
+    },
+  ]);
+
   return (
     <div>
-      <h1>Css Demo React</h1>
-      <EmployeeList />
+      <RouterProvider router={router} />
     </div>
   );
 }
