@@ -15,7 +15,7 @@ function EmployeeList() {
   const columns = ['id', 'name', 'salary'];
 
   const editEmployee = (row) => {
-    navigate(`/employee/:${row.id}`);
+    navigate(`/employee/${row.id}`);
   };
 
   const openNewEmployee = () => {

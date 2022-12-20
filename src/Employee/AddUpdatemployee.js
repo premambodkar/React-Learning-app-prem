@@ -1,11 +1,10 @@
 import CustomInput from '../common-components/CustomInput';
-import { useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import React from 'react';
 
 const AddUpdatemployee = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log('productSlug', searchParams.getAll('id'));
-
+  const searchParams = useParams();
+if(searchParams)
   const onSubmit = (event) => {
     console.log(event);
   };

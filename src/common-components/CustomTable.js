@@ -6,19 +6,25 @@ const CustomTable = (props) => {
       <table className="table table-bordered">
         {props.columns && props.columns.length ? (
           <thead>
-            {props.columns.map((column) => {
-              return <th style={{ textTransform: 'capitalize' }}>{column}</th>;
-            })}
-            <th>Action</th>
+            <tr>
+              {props.columns.map((column, index) => {
+                return (
+                  <th key={index} style={{ textTransform: 'capitalize' }}>
+                    {column}
+                  </th>
+                );
+              })}
+              <th>Action</th>
+            </tr>
           </thead>
         ) : null}
         <tbody>
           {props.dataRows && props.dataRows.length
-            ? props.dataRows.map((row) => {
+            ? props.dataRows.map((row, index) => {
                 return (
-                  <tr>
-                    {Object.values(row).map((value) => {
-                      return <td>{value}</td>;
+                  <tr key={index}>
+                    {Object.values(row).map((value, index) => {
+                      return <td key={index}>{value}</td>;
                     })}
                     <td>
                       <button
