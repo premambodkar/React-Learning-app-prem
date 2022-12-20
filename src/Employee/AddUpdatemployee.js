@@ -1,12 +1,15 @@
 import CustomInput from '../common-components/CustomInput';
 import { useParams } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddUpdatemployee = () => {
   const searchParams = useParams();
-if(searchParams)
-  const onSubmit = (event) => {
-    console.log(event);
+  const [formData, setFormData] = useState();
+
+  const onSubmit = () => {
+    this.setFormData(() => {});
+    if (searchParams) {
+    }
   };
 
   return (

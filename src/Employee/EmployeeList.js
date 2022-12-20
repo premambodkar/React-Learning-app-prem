@@ -28,8 +28,7 @@ function EmployeeList() {
 
   return (
     <div className="container">
-      {/* <Link to="employee">About Us</Link> */}
-      <div className="d-flex flex-row-reverse">
+      <div className="d-flex flex-row-reverse mb-3">
         <button className="btn btn-primary" onClick={openNewEmployee}>
           New Employee
         </button>
