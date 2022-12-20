@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomTable from '../common-components/CustomTable.js';
-
+import Link from 'react-router-dom';
 function EmployeeList() {
   const dataRows = [
     { id: 1, name: 'a', salary: 10 },
@@ -16,6 +16,7 @@ function EmployeeList() {
   };
   return (
     <div className="container">
+      {/* <Link to="employee">About Us</Link> */}
       <div className="d-flex flex-row-reverse">
         <button className="btn btn-primary">New Employee</button>
       </div>
