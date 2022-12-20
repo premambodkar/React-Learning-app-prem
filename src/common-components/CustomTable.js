@@ -2,7 +2,7 @@ import React from 'react';
 
 const CustomTable = (props) => {
   return (
-    <div>
+    <div className="table-responsive">
       <table className="table table-bordered">
         {props.columns && props.columns.length ? (
           <thead>
@@ -27,7 +27,7 @@ const CustomTable = (props) => {
                           props.onEdit(row);
                         }}
                       >
-                        <i className="fa fa-solid fa-pen-to-square"></i>
+                        edit
                       </button>
                       <button
                         className="btn btn-link"
@@ -35,7 +35,7 @@ const CustomTable = (props) => {
                           props.onDelete(row);
                         }}
                       >
-                        <i className="fa-solid fa-pen-to-square"></i>
+                        delete
                       </button>
                     </td>
                   </tr>
