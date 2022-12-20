@@ -1,15 +1,18 @@
 import CustomInput from '../common-components/CustomInput';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import React from 'react';
 
 const AddUpdatemployee = () => {
-  const { productSlug } = useParams();
-  const onSubmit = () => {
-    alert('Hello');
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log('productSlug', searchParams.getAll('id'));
+
+  const onSubmit = (event) => {
+    console.log(event);
   };
+
   return (
     <div>
-      <form onSubmit="{onSubmit}">
+      <form onSubmit={onSubmit}>
         <CustomInput type="text" id="empName" name="empName" label="Name" />
         <CustomInput
           type="number"
@@ -18,14 +21,14 @@ const AddUpdatemployee = () => {
           label="Salary"
         />
         <div
-          class="d-flex justify-content-center btn-group"
+          className="d-flex justify-content-center btn-group"
           role="group"
           aria-label="Basic example"
         >
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
-          <button type="reset" class="btn btn-default">
+          <button type="reset" className="btn btn-default">
             Reset
           </button>
         </div>

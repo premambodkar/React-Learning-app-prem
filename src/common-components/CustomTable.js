@@ -3,7 +3,7 @@ import React from 'react';
 const CustomTable = (props) => {
   return (
     <div>
-      <table class="table table-bordered">
+      <table className="table table-bordered">
         {props.columns && props.columns.length ? (
           <thead>
             {props.columns.map((column) => {
@@ -21,11 +21,21 @@ const CustomTable = (props) => {
                       return <td>{value}</td>;
                     })}
                     <td>
-                      <button className="btn btn-link" onClick="props.onEdit">
-                        <i class="fa fa-solid fa-pen-to-square"></i>
+                      <button
+                        className="btn btn-link"
+                        onClick={() => {
+                          props.onEdit(row);
+                        }}
+                      >
+                        <i className="fa fa-solid fa-pen-to-square"></i>
                       </button>
-                      <button className="btn btn-link">
-                        <i class="fa-solid fa-pen-to-square"></i>
+                      <button
+                        className="btn btn-link"
+                        onClick={() => {
+                          props.onDelete(row);
+                        }}
+                      >
+                        <i className="fa-solid fa-pen-to-square"></i>
                       </button>
                     </td>
                   </tr>

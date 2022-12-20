@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <div>
       <span>Route Not Found</span>
-      {/* <span>{error.error}</span> */}
+      <span>{error.error}</span>
     </div>
   );
 };

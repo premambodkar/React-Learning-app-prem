@@ -1,9 +1,9 @@
 import React from 'react';
 import CustomTable from '../common-components/CustomTable.js';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function EmployeeList() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const dataRows = [
     { id: 1, name: 'a', salary: 10 },
     { id: 2, name: 'b', salary: 15 },
@@ -14,23 +14,32 @@ function EmployeeList() {
   ];
   const columns = ['id', 'name', 'salary'];
 
-  const onEdit = () => {
-    alert('Test');
+  const editEmployee = (row) => {
+    navigate(`/employee/:${row.id}`);
   };
 
-  const handleClick = () => {
-    history.push('/employee');
+  const openNewEmployee = () => {
+    navigate('/employee');
+  };
+
+  const deleteEmployee = (row) => {
+    console.log('deleting record', row);
   };
 
   return (
     <div className="container">
       {/* <Link to="employee">About Us</Link> */}
       <div className="d-flex flex-row-reverse">
-        <button className="btn btn-primary" onClick={handleClick}>
+        <button className="btn btn-primary" onClick={openNewEmployee}>
           New Employee
         </button>
       </div>
-      <CustomTable columns={columns} dataRows={dataRows} onEdit="onClick" />
+      <CustomTable
+        columns={columns}
+        dataRows={dataRows}
+        onEdit={editEmployee}
+        onDelete={deleteEmployee}
+      />
     </div>
   );
 }
