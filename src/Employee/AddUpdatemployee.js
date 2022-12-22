@@ -21,12 +21,21 @@ const AddUpdatemployee = () => {
               onSubmit();
             }}
           >
-            <CustomInput type="text" id="empName" name="empName" label="Name" />
+            <CustomInput
+              type="text"
+              id="empName"
+              name="empName"
+              label="Name"
+              minLength="2"
+              maxLength="10"
+            />
             <CustomInput
               type="number"
               id="empSalary"
               name="empSalary"
               label="Salary"
+              minLength="2"
+              maxLength="10"
             />
             <div
               className="d-flex justify-content-center btn-group"
