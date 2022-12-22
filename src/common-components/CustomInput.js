@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const formGroup = styled.div`
+  margin-bottom: 1rem;
+`;
 
 const CustomInput = (props) => {
   const [isInputValid, setInputValidity] = useState(true);
@@ -17,7 +22,7 @@ const CustomInput = (props) => {
   };
 
   return (
-    <div className="form-group">
+    <formGroup>
       <label className="col-sm-2 col-form-label">{props.label}</label>
       <input
         id={props.id}
@@ -30,7 +35,7 @@ const CustomInput = (props) => {
           onInputChange(event);
         }}
       />
-    </div>
+    </formGroup>
   );
 };
 
