@@ -1,9 +1,10 @@
 import React from 'react';
+import tables from './table.module.css';
 
 const CustomTable = (props) => {
   return (
     <div className="table-responsive">
-      <table className="table table-bordered">
+      <table className={`table table-bordered ${tables.table}`}>
         {props.columns && props.columns.length ? (
           <thead>
             <tr>
