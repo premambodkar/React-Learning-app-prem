@@ -2,6 +2,7 @@ import CustomInput from '../common-components/CustomInput';
 import { useParams } from 'react-router-dom';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Button = styled.button`
 display: inline-block;
@@ -20,19 +21,23 @@ line-height: 1.5;
 border-radius: 0.25rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 `;
+const Row = styled.div``;
 
 const AddUpdatemployee = () => {
   const searchParams = useParams();
   const [formData, setFormData] = useState();
 
   const onSubmit = () => {
-    this.setFormData(() => {});
+    setFormData(() => {});
     if (searchParams) {
     }
   };
 
   return (
     <div className="container">
+      <Row className="row">
+        <NavLink />
+      </Row>
       <div className="row">
         <div className="col">
           <form

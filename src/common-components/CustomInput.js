@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const formGroup = styled.div`
-  margin-bottom: 1rem;
+const FromGroup = styled.div`
+margin-bottom: 0.5rem;
 `;
 
 const CustomInput = (props) => {
@@ -22,7 +22,7 @@ const CustomInput = (props) => {
   };
 
   return (
-    <formGroup>
+    <FromGroup>
       <label className="col-sm-2 col-form-label">{props.label}</label>
       <input
         id={props.id}
@@ -35,7 +35,7 @@ const CustomInput = (props) => {
           onInputChange(event);
         }}
       />
-    </formGroup>
+    </FromGroup>
   );
 };
 
